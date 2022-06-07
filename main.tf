@@ -72,7 +72,7 @@ resource "null_resource" "delay_between_instance_and_route" {
 resource "google_compute_route" "route" {
   name                   = google_compute_instance.instance.name
   project                = var.project
-  network                = "default"
+  network                = var.network
   dest_range             = "0.0.0.0/0"
   tags                   = local.network_tags
   priority               = var.route_priority
